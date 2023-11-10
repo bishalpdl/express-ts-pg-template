@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "es5",
+        "es6"
+     ],
+     "resolveJsonModule": true,
+      "target": "es2016",
+      "module": "commonjs",
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "strictPropertyInitialization": false,
+      "typeRoots": ["./src/types"]
+    }
+  }  
