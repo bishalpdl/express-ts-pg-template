@@ -16,7 +16,7 @@ export let typeormConfig: any = {
   database: dbConfig.dbName,
   synchronize: dbConfig.dbSync, // change to false during production
   logging: false,
-  entities: [join(__dirname, "entities", "*.entity.{js,ts}")],
+  entities: [join(__dirname, "**", "*.entity.{js,ts}")],
   migrations: [join(__dirname, "migration", "*.migration.{js,ts}")],
   subscribers: [join(__dirname, "modules", "**", "*.subscriber.{js,ts}")],
   cli: {
@@ -25,19 +25,5 @@ export let typeormConfig: any = {
     subscribersDir: "src/subscriber",
   },
 };
-
-if (appConfig.nodeEnv === "testing") {
-  typeormConfig.ssl = {
-    ca: readFileSync(
-      path.join(__dirname, "../testingdb_certificate.crt")
-    ).toString(),
-  };
-} else if (appConfig.nodeEnv === "production") {
-  typeormConfig.ssl = {
-    ca: readFileSync(
-      path.join(__dirname, "../productiondb_certificate.crt")
-    ).toString(),
-  };
-}
 
 export const AppDataSource = new DataSource(typeormConfig);
