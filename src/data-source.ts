@@ -16,8 +16,8 @@ export let typeormConfig: any = {
   database: dbConfig.dbName,
   synchronize: dbConfig.dbSync, // change to false during production
   logging: false,
-  entities: [join(__dirname, "entities", "*.{js,ts}")],
-  migrations: [join(__dirname, "migration", "*.{js,ts}")],
+  entities: [join(__dirname, "entities", "*.entity.{js,ts}")],
+  migrations: [join(__dirname, "migration", "*.migration.{js,ts}")],
   subscribers: [join(__dirname, "modules", "**", "*.subscriber.{js,ts}")],
   cli: {
     entitiesDir: "src/entities",
